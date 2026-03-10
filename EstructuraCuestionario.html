@@ -2,124 +2,177 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Cuestionario: Fundamentos de Bases de Datos</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body{
-    font-family: Arial, sans-serif;
-    margin: 40px;
-    background-color: #f4f6f8;
-}
+<title>Cuestionario Didáctico - Bases de Datos</title>
 
-.container{
-    background: white;
-    padding: 25px;
-    border-radius: 8px;
-    max-width: 800px;
-    margin: auto;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-h1{
-    text-align: center;
-}
-
-.question{
-    margin-top: 20px;
-}
-
-button{
-    margin-top: 25px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #2c7be5;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover{
-    background-color: #1a5bb8;
-}
-</style>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 
-<body>
+<body class="bg-light">
 
-<div class="container">
+<div class="container mt-5">
 
-<h1>Cuestionario Didáctico: Sistemas de Bases de Datos</h1>
+<div class="card shadow">
+<div class="card-body">
 
-<p><strong>Instrucciones:</strong>  
-Lee cada pregunta cuidadosamente y selecciona la respuesta correcta.  
-Al finalizar, presiona el botón <b>Enviar respuestas</b>.</p>
+<h2 class="text-center mb-4">Cuestionario Didáctico: Fundamentos de Bases de Datos</h2>
 
-<form>
+<div class="alert alert-info">
+<strong>Instrucciones:</strong>  
+Selecciona la respuesta correcta en cada pregunta y luego presiona <b>Enviar respuestas</b>.
+</div>
+
+<form id="quizForm">
 
 <!-- Pregunta 1 -->
-<div class="question">
-<p><b>1. ¿Qué es un Sistema Gestor de Bases de Datos (SGBD)?</b></p>
-<label><input type="radio" name="p1"> Un software para diseñar páginas web</label><br>
-<label><input type="radio" name="p1"> Una colección de datos interrelacionados y programas para acceder a ellos</label><br>
-<label><input type="radio" name="p1"> Un sistema operativo para redes</label><br>
-<label><input type="radio" name="p1"> Un programa de edición de texto</label>
+<div class="mb-4">
+<label class="form-label"><b>1. ¿Qué es un Sistema Gestor de Bases de Datos (SGBD)?</b></label>
+
+<div class="form-check">
+<input class="form-check-input" type="radio" name="p1" value="0">
+<label class="form-check-label">Un programa para editar documentos</label>
+</div>
+
+<div class="form-check">
+<input class="form-check-input" type="radio" name="p1" value="1">
+<label class="form-check-label">Software que permite almacenar y gestionar bases de datos</label>
+</div>
+
+<div class="form-check">
+<input class="form-check-input" type="radio" name="p1" value="0">
+<label class="form-check-label">Un navegador web</label>
+</div>
 </div>
 
 <!-- Pregunta 2 -->
-<div class="question">
-<p><b>2. Verdadero o Falso: Las bases de datos se utilizan en sectores como banca, universidades y telecomunicaciones.</b></p>
-<label><input type="radio" name="p2"> Verdadero</label><br>
-<label><input type="radio" name="p2"> Falso</label>
+<div class="mb-4">
+<label class="form-label"><b>2. Verdadero o Falso: Las bases de datos se utilizan en bancos, universidades y empresas.</b></label>
+
+<div class="form-check">
+<input class="form-check-input" type="radio" name="p2" value="1">
+<label class="form-check-label">Verdadero</label>
+</div>
+
+<div class="form-check">
+<input class="form-check-input" type="radio" name="p2" value="0">
+<label class="form-check-label">Falso</label>
+</div>
 </div>
 
 <!-- Pregunta 3 -->
-<div class="question">
-<p><b>3. ¿Cuál es el principal objetivo de un SGBD?</b></p>
-<label><input type="radio" name="p3"> Crear videojuegos</label><br>
-<label><input type="radio" name="p3"> Diseñar redes de computadoras</label><br>
-<label><input type="radio" name="p3"> Almacenar y recuperar información de forma eficiente</label><br>
-<label><input type="radio" name="p3"> Eliminar archivos del sistema</label>
+<div class="mb-4">
+<label class="form-label"><b>3. ¿Cuál es la función principal de una base de datos?</b></label>
+
+<div class="form-check">
+<input class="form-check-input" type="radio" name="p3" value="1">
+<label class="form-check-label">Almacenar y organizar información</label>
+</div>
+
+<div class="form-check">
+<input class="form-check-input" type="radio" name="p3" value="0">
+<label class="form-check-label">Diseñar páginas web</label>
+</div>
+
+<div class="form-check">
+<input class="form-check-input" type="radio" name="p3" value="0">
+<label class="form-check-label">Crear sistemas operativos</label>
+</div>
 </div>
 
 <!-- Pregunta 4 -->
-<div class="question">
-<p><b>4. Verdadero o Falso: El nivel físico describe cómo se almacenan realmente los datos en la base de datos.</b></p>
-<label><input type="radio" name="p4"> Verdadero</label><br>
-<label><input type="radio" name="p4"> Falso</label>
+<div class="mb-4">
+<label class="form-label"><b>4. Verdadero o Falso: El nivel físico describe cómo se almacenan los datos en el sistema.</b></label>
+
+<div class="form-check">
+<input class="form-check-input" type="radio" name="p4" value="1">
+<label class="form-check-label">Verdadero</label>
+</div>
+
+<div class="form-check">
+<input class="form-check-input" type="radio" name="p4" value="0">
+<label class="form-check-label">Falso</label>
+</div>
 </div>
 
 <!-- Pregunta 5 -->
-<div class="question">
-<p><b>5. ¿Cuál de los siguientes es un nivel de abstracción de datos?</b></p>
-<label><input type="radio" name="p5"> Nivel físico</label><br>
-<label><input type="radio" name="p5"> Nivel lógico</label><br>
-<label><input type="radio" name="p5"> Nivel de vistas</label><br>
-<label><input type="radio" name="p5"> Todas las anteriores</label>
+<div class="mb-4">
+<label class="form-label"><b>5. ¿Cuál lenguaje se usa comúnmente para consultar bases de datos?</b></label>
+
+<div class="form-check">
+<input class="form-check-input" type="radio" name="p5" value="0">
+<label class="form-check-label">HTML</label>
 </div>
 
-<!-- Pregunta 6 -->
-<div class="question">
-<p><b>6. Verdadero o Falso: El modelo relacional representa los datos mediante tablas.</b></p>
-<label><input type="radio" name="p6"> Verdadero</label><br>
-<label><input type="radio" name="p6"> Falso</label>
+<div class="form-check">
+<input class="form-check-input" type="radio" name="p5" value="1">
+<label class="form-check-label">SQL</label>
 </div>
 
-<!-- Pregunta 7 -->
-<div class="question">
-<p><b>7. ¿Cuál lenguaje se usa comúnmente para consultar bases de datos?</b></p>
-<label><input type="radio" name="p7"> HTML</label><br>
-<label><input type="radio" name="p7"> SQL</label><br>
-<label><input type="radio" name="p7"> CSS</label><br>
-<label><input type="radio" name="p7"> Python</label>
+<div class="form-check">
+<input class="form-check-input" type="radio" name="p5" value="0">
+<label class="form-check-label">CSS</label>
+</div>
 </div>
 
-<button type="submit">Enviar respuestas</button>
+<!-- Botón -->
+<div class="text-center">
+<button type="button" class="btn btn-primary" onclick="calcularResultado()">
+Enviar respuestas
+</button>
+</div>
 
 </form>
 
 </div>
+</div>
+</div>
+
+<script>
+
+function calcularResultado(){
+
+let form = document.forms["quizForm"];
+let total = 5;
+let puntos = 0;
+
+for(let i=1; i<=total; i++){
+
+let respuesta = form["p"+i];
+let respondida = false;
+
+for(let radio of respuesta){
+if(radio.checked){
+respondida = true;
+puntos += parseInt(radio.value);
+}
+}
+
+if(!respondida){
+Swal.fire({
+icon:'warning',
+title:'Pregunta sin responder',
+text:'Por favor responde todas las preguntas antes de enviar.'
+});
+return;
+}
+
+}
+
+Swal.fire({
+title:'Resultado',
+text:'Obtuviste ' + puntos + ' de ' + total + ' respuestas correctas.',
+icon: puntos >=3 ? 'success' : 'error'
+});
+
+}
+
+</script>
 
 </body>
 </html>
